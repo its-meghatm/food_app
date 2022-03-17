@@ -19,11 +19,11 @@ class IconTextWidget extends StatelessWidget {
         SizedBox(width: screenWidth(context, dividedBy: 100),),
         SmallText(text: "Normal"),
         SizedBox(width: screenWidth(context, dividedBy: 30),),
-        Icon(Icons.add_location,color: AppColors.mainColor,size: 18,),
+        Icon(Icons.add_location,color: AppColors.mainColor,size: 16,),
         SmallText(text: "1.7 km"),
         SizedBox(width: screenWidth(context, dividedBy: 30),),
         const Icon(Icons.lock_clock,
-            color: Colors.amber,size: 18),
+            color: Colors.amber,size: 16),
         SmallText(text: "32 min"),
       ],);
   }

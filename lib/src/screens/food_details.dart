@@ -1,10 +1,15 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:food_app/src/screens/home_page.dart';
+import 'package:food_app/src/screens/main_food_page.dart';
 import 'package:food_app/src/utils/utils.dart';
 import 'package:food_app/src/widgets/app_icon.dart';
 import 'package:food_app/src/widgets/expandable_text.dart';
+import 'package:get/get.dart';
+import 'package:get/get_core/src/get_main.dart';
 
 import '../utils/constant.dart';
+import '../widgets/add_remove_button.dart';
 import '../widgets/app_column.dart';
 import '../widgets/icon_text_widget.dart';
 import '../widgets/large_text_widget.dart';
@@ -46,10 +51,15 @@ class _FoodDetailScreenState extends State<FoodDetailScreen> {
               child:
           Row(
           mainAxisAlignment: MainAxisAlignment.spaceBetween,
-            children: const [
-              Appicons(bColors: Colors.white54,
-                  iconColor: Colors.black45,
-                  icons: Icons.arrow_back_ios),
+            children:  [
+              GestureDetector(
+                onTap: (){
+                  Get.to(()=>HomePage());
+                },
+                child: Appicons(bColors: Colors.white54,
+                    iconColor: Colors.black45,
+                    icons: Icons.arrow_back_ios),
+              ),
               Appicons(bColors: Colors.white54,
                   iconColor: Colors.black45,
                   icons: Icons.shopping_cart)
@@ -98,27 +108,7 @@ class _FoodDetailScreenState extends State<FoodDetailScreen> {
         child: Row(
           mainAxisAlignment: MainAxisAlignment.spaceBetween,
         children: [
-            Container(
-              padding: EdgeInsets.only(left:screenHeight(context, dividedBy: 55,),
-                right: screenHeight(context, dividedBy: 55),
-                top: screenHeight(context, dividedBy: 50),
-                bottom: screenHeight(context, dividedBy: 50)
-        ),
-              decoration: BoxDecoration(
-                borderRadius: BorderRadius.circular(screenHeight(context, dividedBy: 45),),
-                color: Colors.white
-              ),
-              child: Row(
-                children: [
-                  Icon(Icons.remove,color: AppColors.iconColor1,),
-                  SizedBox(width: screenWidth(context, dividedBy: 45),),
-                  LargeText(text: "0",color: AppColors.iconColor1,),
-                  SizedBox(width: screenWidth(context, dividedBy: 45),),
-                  Icon(Icons.add,color: AppColors.iconColor1,),
-
-                ],
-              ),
-            ),
+          AddRemoveButton(),
           Container(
             padding: EdgeInsets.only(left:screenHeight(context, dividedBy: 55,),
                 right: screenHeight(context, dividedBy: 55),

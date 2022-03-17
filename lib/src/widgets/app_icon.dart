@@ -19,7 +19,7 @@ class Appicons extends StatelessWidget {
 
       ),
     ),
-      radius: 16,
+      radius: 18,
       backgroundColor: bColors,
 
     );

@@ -1,8 +1,11 @@
 import 'package:dots_indicator/dots_indicator.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:food_app/src/screens/food_details.dart';
 import 'package:food_app/src/widgets/large_text_widget.dart';
 import 'package:food_app/src/widgets/small_text_widget.dart';
+import 'package:get/get.dart';
+import 'package:get/get_core/src/get_main.dart';
 
 import '../utils/constant.dart';
 import '../utils/utils.dart';
@@ -41,13 +44,18 @@ class _FoodPageBodyState extends State<FoodPageBody> {
       children: [
         Container(
           height: 320,
-          child: PageView.builder(
-            controller: _pageController,
-            itemCount: 5,
-              itemBuilder: (context,position){
+          child: GestureDetector(
+            onTap: (){
+              Get.to(()=>FoodDetailScreen());
+            },
+            child: PageView.builder(
+              controller: _pageController,
+              itemCount: 5,
+                itemBuilder: (context,position){
 return _builPageItem(position);
         }
-        )
+        ),
+          )
         ),
     DotsIndicator(
      dotsCount: 5,
